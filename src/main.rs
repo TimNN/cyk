@@ -71,7 +71,7 @@ fn main() {
 
     for word in words {
         macro_rules! insert {($c:expr, $k:expr, $v:expr) => {{
-            println!("V_{{{},{}}} := \\{{{}\\}}", $k.0, $k.1 + 1, $v.iter().map(|v| v.to_string()).collect::<Vec<_>>().join(", "));
+            println!("$V_{{{},{}}} := \\{{{}\\}}$\n", $k.0, $k.1 + 1, $v.iter().map(|v| v.to_string()).collect::<Vec<_>>().join(", "));
             $c.insert($k, $v)
         }}}
 
